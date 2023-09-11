@@ -1,4 +1,4 @@
-/* Estilo base para o corpo do documento */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -10,7 +10,6 @@ body {
 }
 
 
-/* Pseudo-elemento ::after para criar círculos de diferentes tamanhos e posições no fundo */
 body::after {
     content: "";
     /* Cria um conteúdo vazio para o pseudo-elemento */
@@ -255,7 +254,6 @@ a:hover {
 /* Estilos para os links dentro do rodapé */
 .footer a {
     color: #0056b3;
-    /* Define a cor do link como azul mais escuro (#0056b3) */
     text-decoration: none;
     /* Remove a decoração de texto sublinhado dos links */
 }
