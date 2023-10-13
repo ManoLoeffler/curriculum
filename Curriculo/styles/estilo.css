@@ -1,0 +1,269 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 60px;
+    background-color: #0b0c2e;
+    color: #fffcfc;
+    position: relative;
+    z-index: 0;
+}
+
+
+/* Pseudo-elemento ::after para criar círculos de diferentes tamanhos e posições no fundo */
+body::after {
+    content: "";
+    /* Cria um conteúdo vazio para o pseudo-elemento */
+    position: absolute;
+    /* Define a posição absoluta para sobrepor ao conteúdo */
+    top: 0;
+    /* Alinha o topo do pseudo-elemento com o topo do corpo */
+    left: 0;
+    /* Alinha a esquerda do pseudo-elemento com a esquerda do corpo */
+    width: 100%;
+    /* Define a largura do pseudo-elemento como 100% do corpo */
+    height: 100%;
+    /* Define a altura do pseudo-elemento como 100% do corpo */
+    z-index: -1;
+    /* Define uma ordem de empilhamento menor para ficar no fundo */
+    pointer-events: none;
+    /* Evita que o pseudo-elemento responda a eventos de clique do mouse */
+}
+
+/* Estilos para criar círculos aleatórios */
+body::after {
+    background-color: #007bff;
+    /* Define a cor de fundo dos círculos como azul */
+    opacity: 0.3;
+    /* Define a opacidade dos círculos para torná-los semi-transparentes */
+    border-radius: 50%;
+    /* Define o raio de borda para tornar os círculos */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    /* Define uma ordem de empilhamento menor que os círculos para ficar abaixo deles */
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.2), transparent);
+    /* Gradiente de fundo para criar o brilho azul */
+}
+
+/* Animação para mover os círculos aleatoriamente no fundo */
+@keyframes move-circles {
+    0% {
+        transform: translate(0, 0) scale(5);
+        /* Define a posição e o tamanho inicial dos círculos */
+    }
+
+    100% {
+        transform: translate(300px, -200px) scale(5);
+        /* Define a posição e o tamanho final dos círculos */
+    }
+}
+
+/* Aplica a animação de posicionamento e tamanho aos círculos */
+body::after {
+    animation: move-circles 10s linear infinite alternate;
+    /* Aplica a animação aos círculos */
+}
+
+/* Define a quantidade e o tamanho dos círculos criados */
+body::after {
+    content: "";
+    /* Cria um conteúdo vazio para o pseudo-elemento */
+    width: 40px;
+    /* Define a largura dos círculos como 40 pixels */
+    height: 40px;
+    /* Define a altura dos círculos como 40 pixels */
+    animation-delay: calc(var(--i) * 0.1s);
+    /* Define o atraso de início da animação para cada círculo */
+}
+
+/* Utiliza a função calc() para criar diferentes atrasos para os círculos */
+body::after:nth-of-type(1) {
+    --i: 15;
+    /* Define o valor da variável --i para cada círculo individualmente */
+}
+
+body::after:nth-of-type(2) {
+    --i: 30;
+    /* Define o valor da variável --i para cada círculo individualmente */
+}
+
+/* Estilos do cabeçalho */
+.header {
+    text-align: center;
+    /* Centraliza o texto do cabeçalho */
+    margin-bottom: 20px;
+    /* Define a margem inferior do cabeçalho */
+    padding: 30px;
+    /* Define o preenchimento interno do cabeçalho */
+    color: #fffdfd;
+    /* Define a cor do texto do cabeçalho como branco */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header img {
+    max-width: 150px;
+    /* Define a largura máxima da imagem do cabeçalho */
+    border-radius: 50%;
+    /* Define o raio de borda para tornar a imagem redonda */
+}
+
+.header h1 {
+    margin: 10px 0;
+    /* Define a margem superior e inferior do título do cabeçalho */
+}
+
+/* Estilos das seções */
+.section {
+    margin-bottom: 20px;
+    /* Define a margem inferior das seções */
+    padding: 15px;
+    /* Define o preenchimento interno das seções */
+    background-color: #002955;
+    /* Define a cor de fundo das seções como branco */
+    border-radius: px;
+    /* Define o raio de borda para tornar as seções arredondadas */
+    box-shadow: 0 2px 4px rgba(194, 183, 183, 0.1);
+    /* Adiciona sombra às seções */
+    transition: box-shadow 0
+}
+
+/* Estilos de sombra e escala para a seção que cresce ao passar o mouse */
+.section:hover {
+    box-shadow: 0 8px 16px rgba(253, 253, 253, 0.5);
+    /* Adiciona uma sombra mais forte ao passar o mouse */
+    transform: scale(1.05);
+    /* Aumenta a escala da seção em 5% ao passar o mouse */
+    /* ... Outros estilos ... */
+    transition: box-shadow 0.3s ease-in-out, transform 0.8s ease-in-out;
+    /* Adiciona a transição com 0.3s de duração */
+    transition-delay: 0.1s;
+    /* Adiciona um atraso de 0.1s antes que a transição ocorra */
+}
+
+.section:before {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+    /* Adiciona uma sombra mais forte ao passar o mouse */
+    transform: scale(1.05);
+    /* Aumenta a escala da seção em 5% ao passar o mouse */
+    /* ... Outros estilos ... */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    /* Adiciona a transição com 0.3s de duração */
+    transition-delay: 0.1s;
+    /* Adiciona um atraso de 0.1s antes que a transição ocorra */
+
+
+}
+
+/* Estilos para o cabeçalho h1 */
+h1 {
+    font-size: 36px;
+    /* Define o tamanho da fonte como 36 pixels */
+    color: #007bff;
+    /* Define a cor do texto como azul (#007bff) */
+}
+
+/* Estilos para os títulos h2 */
+h2 {
+    font-size: 24px;
+    /* Define o tamanho da fonte como 24 pixels */
+    margin-bottom: 10px;
+    /* Define a margem inferior de 10 pixels para separar os elementos */
+    color: #007bff;
+    /* Define a cor do texto como azul (#007bff) */
+    transition: color 0.3s ease-in-out;
+    /* Adiciona uma transição suave de cor ao passar o mouse */
+}
+
+/* Efeito de cor ao passar o mouse no título h2 */
+h2:hover {
+    color: #0056b3;
+    /* Altera a cor do texto para azul mais escuro (#0056b3) ao passar o mouse */
+}
+
+/* Estilos para o título de trabalho (job title) */
+.job-title {
+    font-weight: bold;
+    /* Define o estilo da fonte como negrito (bold) */
+}
+
+/* Estilos para as listas não ordenadas (ul) */
+ul {
+    list-style-type: disc;
+    /* Define o estilo do marcador como um círculo preenchido */
+    margin-left: 20px;
+    /* Define a margem esquerda de 20 pixels para recuar a lista */
+}
+
+/* Estilos para os links (âncoras) */
+a {
+    color: #007bff;
+    /* Define a cor do link como azul (#007bff) */
+    text-decoration: none;
+    /* Remove a decoração de texto sublinhado dos links */
+    transition: color 0.3s ease-in-out;
+    /* Adiciona uma transição suave de cor ao passar o mouse */
+}
+
+/* Efeito de cor ao passar o mouse nos links */
+a:hover {
+    color: #0056b3;
+    /* Altera a cor do link para azul mais escuro (#0056b3) ao passar o mouse */
+}
+
+/* Estilos específicos para a seção de habilidades */
+.section.skills {
+    margin-bottom: 200px;
+    /* Adiciona uma margem na parte inferior da seção para dar espaço para o rodapé */
+}
+
+/* Efeito de crescimento e sombra ao passar o mouse no rodapé */
+.footer:hover {
+    /* ... Efeito de hover no rodapé ... */
+}
+
+/* Estilos para os parágrafos dentro do rodapé */
+.footer p {
+    margin-bottom: 10px;
+    /* Define a margem inferior de 10 pixels para separar os elementos */
+}
+
+/* Estilos para as listas não ordenadas dentro do rodapé */
+.footer ul {
+    list-style: none;
+    /* Remove o estilo do marcador da lista */
+    padding: 0;
+    /* Remove o preenchimento padrão da lista */
+    display: flex;
+    /* Define a exibição como flexível para alinhar horizontalmente os itens */
+    justify-content: center;
+    /* Alinha os itens ao centro horizontalmente */
+}
+
+/* Estilos para os itens de lista dentro do rodapé */
+.footer li {
+    margin-bottom: 5px;
+    /* Define a margem inferior de 5 pixels para separar os itens da lista */
+}
+
+/* Estilos para os links dentro do rodapé */
+.footer a {
+    background-color: #0b0c2e;
+    color: #Ffffff;
+    /* Define a cor do link como azul mais escuro (#0056b3) */
+    text-decoration: none;
+    /* Remove a decoração de texto sublinhado dos links */
+}
+
+/* Efeito de sublinhado ao passar o mouse nos links do rodapé */
+.footer a:hover {
+    text-decoration: underline;
+    /* Adiciona um sublinhado ao passar o mouse nos links do rodapé */
+}
